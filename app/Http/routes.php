@@ -15,26 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/teste', function (\Illuminate\Http\Request $request){
+Route::get('/teste', 'TesteController@exibirteste');
+Route::post('/teste', 'TesteController@teste');
 
 
-    return view('teste');
-
-
-});
-
-Route::post('/teste', function (\Illuminate\Http\Request $request){
-
-
-     $idade = $request->get('valor_idade');
-     $peso = $request->get('valor_peso');
-
-     $resultado = $idade * $peso;
-
-    //return $resultado;
-
-
-    return view('teste', ['calculo' => $resultado]);
-
-
-});
